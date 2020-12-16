@@ -49,13 +49,13 @@ for i in data:
 purchase1 = []
 data = soup.select('#ie11andabove > div > table > tbody > tr > td:nth-child(4)')
 for i in data:
-    purchase1.append(i.text) 
+    purchase1.append(i.text.replace(' ', '').replace('\n','').replace('\r', '')) 
     
 #即期賣
 selling1 = []
 data = soup.select('#ie11andabove > div > table > tbody > tr > td:nth-child(5)')
 for i in data:
-    selling1.append(i.text)
+    selling1.append(i.text.replace(' ', '').replace('\n','').replace('\r', ''))
 
 for i in range(len(selling1)):
     update_time.append(dtime())
